@@ -1,0 +1,13 @@
+import cv2         #importing the library
+
+cap = cv2.VideoCapture(0)                   #Initialise the camera with the laptop id 0,(grabing the camera port)
+                                            #Incase if you have external camera then camera id vary 
+
+while True:                                 #while loop for continuous image production
+    ret, frame = cap.read()                 #Reading the camera frame
+    cv2.imshow('camera', frame)             #Showing the camera output on screen
+    if cv2. waitKey(1)==13:                 #showing output until the enter hits
+        break                               #If enter gets hitted , loop breaks
+      
+cap .release()                              #Release the camera port (very important step)
+cv2.destroyAllWindows()                     #Destroy the 'camera' window
